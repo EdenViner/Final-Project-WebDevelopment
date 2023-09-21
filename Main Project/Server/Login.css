@@ -1,0 +1,134 @@
+body {font-family: Arial, Helvetica, sans-serif;
+background-image: url(https://static.vecteezy.com/system/resources/previews/008/131/826/non_2x/abstract-3d-light-brown-background-with-gold-lines-curved-wavy-sparkle-with-copy-space-for-text-luxury-style-template-design-free-vector.jpg);
+background-size:fill;
+font-size: 18px;
+}
+
+#container{
+    display: block;
+    margin-top: 30px;
+    margin-left: auto;
+    margin-right: auto;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    width: 500px;
+    height: 350px;
+    box-shadow: 0 0 10px 1px #ffc800,  
+    0 0 80px 5px rgb(255, 255, 255), 
+    0 0 80px 5px rgb(255, 255, 255);
+    border-radius: 7000px;
+    padding: 100px;
+    background-color:#ddbeb0;
+}
+
+
+.btn{
+  margin-left: auto;
+  color: #813f1f;
+  cursor:pointer;
+  border: transparent;
+  position:relative;
+  padding:10px 20px;
+  background:transparent;
+  font-size:20px;
+  border-top-right-radius:30px;
+  border-bottom-left-radius:30px;
+  transition:all 1.2s;
+  &:after,&:before{
+    content:" ";
+    width:10px;
+    height:10px;
+    position:absolute;
+    border :0px solid #fff;
+    transition:all 1.3s; 
+  }
+    &:after{
+        top:0px;
+        left:0px;
+        border-top:5px solid #813f1f;
+        border-left:5px solid #813f1f;
+      }
+      &:before{
+        bottom:0px;
+        right:0px;
+        border-bottom:5px solid #813f1f;
+        border-right:5px solid #813f1f;
+        
+      }
+      &:hover{
+        border-top-right-radius:0px;
+      border-bottom-left-radius:0px;
+        background:transparent;
+        color:#ffffff;
+        
+        &:before,&:after{
+          width:100%;
+          height:100%;
+          border-color:rgb(255, 255, 255);
+        }
+      }
+}
+
+#welcome{
+   display: flex;
+   margin-left: 80px;
+   margin-right: auto;
+   margin-top: -100px;
+}
+.grow img{
+transition: 1s ease
+}
+    
+.grow img:hover{
+    -webkit-transform: scale(1.2);
+    -ms-transform: scale(1.2);
+    transform: scale(1.2);
+    transition: 1s ease;
+ }
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+input[type="text"],
+input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+}
+
+input{
+    text-align: center;
+}
+
+::placeholder{
+    color: gray;
+    
+}
+input:focus::placeholder {
+    color: rgb(222, 222, 222);
+}
+
+#password,#username{
+    outline: none;
+    width: 70%;
+    border-radius: 10px;
+}
+a{
+    text-decoration: none;
+    color: brown;
+}
+a:hover{
+    color: white;
+}
+
+#username:hover,#password:hover{
+    box-shadow: 0 0 5px 1px #ffc800,  
+    0 0 10px 2px rgb(255, 255, 255), 
+    0 0 10px 2px rgb(255, 255, 255);;
+}
+

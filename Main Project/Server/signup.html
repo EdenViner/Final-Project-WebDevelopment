@@ -1,0 +1,126 @@
+<html>
+<head>
+    <link href="signup.css" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>PawPals - Sign Up</title>
+    <link rel="icon" type="image/png" href="pawpalicon.png">
+</head>
+
+<body>
+    <img src="pawpals.png" alt="pawpals" height="50px" width="200px" style="margin-left: auto; margin-right: auto; display: block;">
+    <div id="container">
+        <img src="signup.png" id="signupimg" alt="signup" height="150px" width="200px" style="margin-top: -90px;">
+        </br> </br>
+        <form action="process_signup.php" method="post" onsubmit="return validateForm()" novalidate>
+            <label for="username">Username:</label>
+            <input type="text" id="username" name="username" class="INPUT"><br>
+            <div id="username-error" class="error"></div>
+        </br>
+
+            <label for="petname">Pet Name:</label>
+            <input type="text" id="petname" name="petname" class="INPUT"><br>
+            <div id="petname-error" class="error"></div>
+        </br>
+
+            <label for="breed">Breed:</label>
+            <input type="text" id="breed" name="breed" class="INPUT" placeholder="optional"><br>
+        </br>
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" class="INPUT"><br>
+            <div id="email-error" class="error"></div>
+        </br>
+
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" class="INPUT" required pattern="^(?=.*[A-Z])(?=.*[a-z])(?=.*\d).{8,}$"><br>
+            <div id="password-error" class="error"></div>
+        </br>
+
+            <label for="confirm_password">Confirm Password:</label>
+            <input type="password" id="confirm_password" name="confirm_password" class="INPUT"><br>
+            <div id="confirm-password-error" class="error"></div>
+        </br>
+        
+        &nbsp;&nbsp;&nbsp;&nbsp;
+            <label for="photo" class="file-label">
+            <span>Upload Profile Photo</span>
+            <input type="file" id="photo" name="photo" accept="image/*" class="file-input">
+            </label><br><br>
+    
+            <input type="submit" id="submit" value="Sign Up">
+            &nbsp;&nbsp;&nbsp;
+            <button type="button" id="back">Back</button>
+        </form>
+    </div>
+
+    <script>
+        var backButtonClicked = false;
+        document.getElementById("back").addEventListener("click", function() {
+            backButtonClicked = true; // Set the flag to true when the button is clicked
+            window.location.href = "Login.html"; // Navigate to the desired URL
+        });
+
+        function validateForm() {
+            var usernameInput = document.getElementById("username");
+            var petnameInput = document.getElementById("petname");
+            var emailInput = document.getElementById("email");
+            var passwordInput = document.getElementById("password");
+            var confirm_passwordInput = document.getElementById("confirm_password");
+
+            var passwordPattern = /^(?=.*[A-Z])(?=.*[a-z])(?=.*\d).{8,}$/;
+
+            function showError(inputElement, errorMessage) {
+                var errorElement = document.getElementById(inputElement.id + "-error");
+                errorElement.textContent = errorMessage;
+            }
+
+            function clearError(inputElement) {
+                var errorElement = document.getElementById(inputElement.id + "-error");
+                errorElement.textContent = "";
+            }
+
+            if (!backButtonClicked && usernameInput.value.trim() === "") {
+                showError(usernameInput, "Username is missing!");
+                usernameInput.focus();
+                return false;
+            } else {
+                clearError(usernameInput);
+            }
+
+            if (!backButtonClicked && petnameInput.value.trim() === "") {
+                showError(petnameInput, "Name of the pet is missing!");
+                petnameInput.focus();
+                return false;
+            } else {
+                clearError(petnameInput);
+            }
+
+            if (!backButtonClicked && emailInput.value.trim() === "") {
+                showError(emailInput, "Email address is missing!");
+                emailInput.focus();
+                return false;
+            } else {
+                clearError(emailInput);
+            }
+
+            if (!passwordPattern.test(passwordInput.value)) {
+                showError(passwordInput, "Password must contain: at least one uppercase letter, one lowercase letter, one digit, and be at least 8 characters long.");
+                passwordInput.focus();
+                return false;
+            } else {
+                clearError(passwordInput);
+            }
+
+            if (!backButtonClicked && confirm_passwordInput.value.trim() !== passwordInput.value.trim()) {
+                showError(confirm_passwordInput, "Passwords don't match!");
+                confirm_passwordInput.focus();
+                return false;
+            } else {
+                clearError(confirm_passwordInput);
+            }
+
+            return true;
+        }
+    </script>
+</body>
+</html>
