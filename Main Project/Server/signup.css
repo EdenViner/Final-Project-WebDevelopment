@@ -174,14 +174,11 @@ box-shadow: 0 0 2.5px 2.5px black;
 .file-label {
     display: inline-block;
     padding: 10px 20px;
-    background-color: transparent; 
-    box-shadow:  0 0 3px 1px #ffc800,  
-    0 0 6px 3px rgb(255, 255, 255), 
-    0 0 6px 3px rgb(255, 255, 255);;
+    background-color: white; 
     color: brown; 
     border-radius: 5px;
+    border: 1px solid black;
     cursor: pointer;
-    transition: background-color 0.3s ease color 0.3s ease, box-shadow 0.3s ease, border-radius 0.3s ease;
 }
 
 
@@ -193,10 +190,11 @@ box-shadow: 0 0 2.5px 2.5px black;
 .file-label:hover {
     background-color: #834121; 
     color: white;
-    border-radius: 30px;
+    border-radius: 15px;
     transition: 1.3s;
 }
 
 .file-label:not(:hover) {
     transition: 1.3s;
+
 }
