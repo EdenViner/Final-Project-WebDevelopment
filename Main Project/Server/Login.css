@@ -13,7 +13,7 @@ font-size: 18px;
     align-items: center;
     text-align: center;
     width: 500px;
-    height: 350px;
+    height: 385px;
     box-shadow: 0 0 10px 1px #ffc800,  
     0 0 80px 5px rgb(255, 255, 255), 
     0 0 80px 5px rgb(255, 255, 255);
@@ -24,6 +24,7 @@ font-size: 18px;
 
 
 .btn{
+  margin-bottom: 10px;
   margin-left: auto;
   color: #813f1f;
   cursor:pointer;
@@ -130,5 +131,9 @@ a:hover{
     box-shadow: 0 0 5px 1px #ffc800,  
     0 0 10px 2px rgb(255, 255, 255), 
     0 0 10px 2px rgb(255, 255, 255);;
+}
+
+#forgot{
+    font-size: 14px;
 }
 
